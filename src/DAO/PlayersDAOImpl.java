@@ -25,9 +25,9 @@ public class PlayersDAOImpl  {
 	
 		Connection con = ConnectionClass.intializeConn();
 		
-		PreparedStatement pt = con.prepareStatement("UPDATE  Players SET Team=? WHERE Id=?");
-		pt.setInt(1,id);
-		pt.setString(2,team);
+		PreparedStatement pt = con.prepareStatement("UPDATE `Players` SET Team=? WHERE Id=?");
+		pt.setString(1, team);
+		pt.setInt(2, id);
 		int i = pt.executeUpdate();
 		System.out.println (i);
 	}

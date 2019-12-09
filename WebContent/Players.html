@@ -11,16 +11,20 @@
    
 
     <label for="PlayerId"><b>PlayerId</b></label>
-    <input type="text" placeholder="Enter Player Id" name="playerId" required>
+    <input type="text" placeholder="Enter Player Id" name="playerId" 
+     pattern= "[0-9]*" maxlength="2"  title="Only numbers allowed" required>
      <br>
     <label for="Playername"><b>Player name</b></label>
-    <input type="text" placeholder="Enter Player name" name="Playername" required>
+    <input type="text" placeholder="Enter Player name" name="Playername" 
+     pattern= "[A-Za-z\s]*" maxlength="11"  title="Only alphabets allowed"required>
      <br>
     <label for="PlayerTeam"><b>Player Team</b></label>
-    <input type="text" placeholder="Player Team" name="PlayerTeam" required>
+    <input type="text" placeholder="Player Team" name="PlayerTeam" 
+    pattern= "[A-Za-z\s]*" maxlength="11"  title="Only alphabets allowed"required>
     <br>
     <label for="PlayerStatus"><b>Player Status</b></label>
-    <input type="text" placeholder="Player Status" name="PlayerStatus" required>
+    <input type="text" placeholder="Player Status" name="PlayerStatus" 
+    pattern= "[A-Za-z\s]*" maxlength="11"  title="Only alphabets allowed"required>
     <br>
  <p align = "center">
 <button type="submit" class="btn btn-info">Add new player</button>

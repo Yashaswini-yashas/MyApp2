@@ -20,7 +20,7 @@ public class UpdateServlet extends HttpServlet  {
 		PlayersDAOImpl p = new PlayersDAOImpl();
 		int id = Integer.parseInt(request.getParameter("playerId"));
 		
-		String team = request.getParameter("playerTeam");
+		String team = request.getParameter("PlayerTeam");
 		
 		try {
 			 p.updateTeam(id, team);

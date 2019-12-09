@@ -11,11 +11,13 @@
    
 
     <label for="PlayerId"><b>Player Id</b></label>
-    <input type="text" placeholder="Enter Player Id" name="playerId" required>
+    <input type="text" placeholder="Enter Player Id" name="playerId" 
+    pattern= "[0-9]*" maxlength="2"  title="Only numbers allowed" required>
      <br>
     
     <label for="PlayerTeam"><b>Player Team</b></label>
-    <input type="text" placeholder="Player Team" name="PlayerTeam" required>
+    <input type="text" placeholder="Player Team" name="PlayerTeam" 
+    pattern= "[A-Za-z\s]*" maxlength="11"  title="Only alphabets allowed" required>
     <br>
    
   <div></div><button type="submit" class="registerbtn">Update</button>

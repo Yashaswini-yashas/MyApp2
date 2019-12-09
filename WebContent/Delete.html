@@ -8,7 +8,8 @@
 <div class="container">
     <h1>Delete Players data</h1>
  <label for="PlayerId"><b>PlayerId</b></label>
-    <input type="text" placeholder="Enter Player Id" name="PlayerId" required>
+    <input type="text" placeholder="Enter Player Id" name="PlayerId" 
+    pattern= "[0-9]*" maxlength="2"  title="Only numbers allowed" required>
 
 <p align = "center">
 <button type="submit" class="btn btn-info"> Delete player</button>
