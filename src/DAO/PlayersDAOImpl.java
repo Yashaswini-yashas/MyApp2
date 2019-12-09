@@ -31,14 +31,12 @@ public class PlayersDAOImpl  {
 		int i = pt.executeUpdate();
 		System.out.println (i);
 	}
-	public void ReadPlayers(int id) throws ClassNotFoundException, SQLException {
+	public static ResultSet ReadPlayers() throws ClassNotFoundException, SQLException {
 		Connection con = ConnectionClass.intializeConn();
 	
 	PreparedStatement stmt=con.prepareStatement("select * from Players");  
 	ResultSet rs=stmt.executeQuery();  
-	while(rs.next()){  
-		System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3)+" "+rs.getString(4));  
-		} 
+	return  rs;
 		}
 	public void DeletePlayers(int id) throws ClassNotFoundException, SQLException {
 		Connection con = ConnectionClass.intializeConn();
@@ -83,9 +81,7 @@ public class PlayersDAOImpl  {
 		    }
 		break;
 	    case 3: 
-	    	System.out.println("Enter Id of Players you want to read about");
-	    	int id3 = sc.nextInt();
-	    	p.ReadPlayers(id3);
+	    p.ReadPlayers();
 	    break;
 	    case 4: 
 	    	System.out.println("Enter Id of Players you want to delete");

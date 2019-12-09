@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionClass {
-	protected static Connection intializeConn() throws ClassNotFoundException, SQLException {
+	public static Connection intializeConn() throws ClassNotFoundException, SQLException {
 		String name = "uqn9VQ6Hqy";
 		String username = "uqn9VQ6Hqy";
 		String password = "vooaYhKWmG";
