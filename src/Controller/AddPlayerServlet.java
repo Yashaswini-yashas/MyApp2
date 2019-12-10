@@ -1,5 +1,4 @@
 package Controller;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -26,7 +25,7 @@ public class AddPlayerServlet extends HttpServlet {
 		String team = request.getParameter("playerTeam");
 		String status = request.getParameter("playerStatus");
 		try {
-			p.addPlayers(id, name, team, status);
+			p.addPlayers(id, name, team, status); 
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
