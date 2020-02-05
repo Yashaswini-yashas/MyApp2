@@ -27,10 +27,10 @@ node {
       }
    }
    stage('Deploy') {
-      deploy adapters: [tomcat9(credentialsId: 'TomcatManagerScript', path: '', url: 'http://localhost:7070')], contextPath: 'devops', war: '**/*.war'
+      deploy adapters: [tomcat9(credentialsId: 'TomcatManagerScript', path: '', url: 'http://localhost:7070')], contextPath: 'players', war: '**/*.war'
    }
    stage("Smoke Test"){
-       bat "curl --retry-delay 10 --retry 5 http://localhost:7070/devops"
+       bat "curl --retry-delay 10 --retry 5 http://localhost:7070/players"
    }
 }
 
