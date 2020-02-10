@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <title>Welcome to Premier league</title>
+<style>
+.menu
+{
+	margin-top:2%;
+	margin-left:25%;
+	margin-bottom:2%;
+	padding:2%;
+	border-radius:5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	background-image: linear-gradient(to right top, #dbca18, #cfaf1e, #bf9624, #ac7e28, #97682a);
+	color:white;
+	font-size:20px;
+	text-align:center;
+}
+
+.menu:hover
+{
+	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	  background-image: linear-gradient(to bottom, #18db59, #00dd84, #00dda7, #00dcc2, #21d9d4);
+	  
+}
+.menu a
+{
+	color : white;
+	font-size:20px;
+	
+}
+
+body
+{
+	background-image: linear-gradient(to top, #a4a9b1, #bbbec4, #d2d3d7, #e9e9eb, #ffffff);
+	background-size:cover;
+}
+</style>
 </head>
 <body>
-Please select an option
-<ul>
-  <li><a href="Players.html">Insert Player</a></li>
-  <li><a href="Update.html">Update Player record</a></li>
-  <li><a href="Read.html">Read Player record</a></li>
-  <li><a href="Delete.html">Delete player record</a></li>
-</ul>
+<h1>Please select an option</h1>
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-lg-6 col-md-6  menu"><a href="Players.html">Insert Player</a></div>
+<div class="col-sm-6 col-lg-6 col-md-6 menu"><a href="Update.html">Update Player record</a></div>
+</div>
+<div class="row">
+<div class="col-sm-6 col-lg-6 col-md-6 menu"><a href="Read.html">Read Player record</a></div>
+<div class="col-sm-6 col-lg-6 col-md-6 menu"><a href="Delete.html">Delete player record</a></div>
+</div>
+</div>
+</body>
+</html>
