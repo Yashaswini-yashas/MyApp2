@@ -1,18 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+	body
+{
+	background-image: linear-gradient(to top, #a4a9b1, #bbbec4, #d2d3d7, #e9e9eb, #ffffff);
+	background-size:cover;
+}
+
+.account-form
+{
+	margin-top:5%;
+	margin-left:25%;
+	margin-bottom:30%;
+	padding:5%;
+	width:50%;
+	border-radius:5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	background-image: linear-gradient(to right top, #dbca18, #cfaf1e, #bf9624, #ac7e28, #97682a);
+	color:white;
+	font-size:20px;
+	
+}
+	
+</style>
 <body>
 
 <h2>READ PLAYERS</h2>
 
 <body>
-<p>Click on the button to get players data.</p>
 <form  class="container account-form" action="ReadServlet" method="post">
+<h3>Click on the button to get players data.</h3>
+
  <p align = "center">
-<button type="submit" class="btn btn-info">Read Player data</button>
+<button type="submit" class="btn btn-lg btn-info">Read Player data</button>
 </p>
 </form> 
 </body>
 </html>
+

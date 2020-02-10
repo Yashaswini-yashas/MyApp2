@@ -15,6 +15,7 @@ public class DeleteServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -25,13 +26,12 @@ public class DeleteServlet extends HttpServlet {
 		try {
 			p.DeletePlayers(id);
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
 		PrintWriter out = response.getWriter();
 		out.println("<html><body><b>Deleted " + "</b></body></html>");
-		
 
 	}
 }
