@@ -9,13 +9,14 @@ import java.util.Scanner;
 public class PlayersDAOImpl  {
 
 	
-	public void addPlayers(int id, String name, String team, String status) throws ClassNotFoundException, SQLException {
+	public void addPlayers(int id, String name, String team, String status, String sports) throws ClassNotFoundException, SQLException {
 		Connection con = ConnectionClass.intializeConn();
-		PreparedStatement pt = con.prepareStatement("Insert into Players Values(?,?,?,?)");
+		PreparedStatement pt = con.prepareStatement("Insert into Players Values(?,?,?,?,?)");
 		pt.setInt(1,id);
 		pt.setString(2,name);
 		pt.setString(3,team);
 		pt.setString(4,status);
+		pt.setString(5,sports);
 		int i = pt.executeUpdate();
 		System.out.println(i + "wohooo");
 		
@@ -65,7 +66,9 @@ public class PlayersDAOImpl  {
 		String team = sc.next();
 		System.out.println("status of new player");
 		String status = sc.next();
-		p.addPlayers(id, name, team, status);  
+		System.out.println("sports represented");
+		String sports = sc.next();
+		p.addPlayers(id, name, team, status,sports);  
 	    break;  
 	    case 2: 
 	    System.out.println("Id ofplayer to update");
