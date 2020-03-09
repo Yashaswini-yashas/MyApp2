@@ -33,6 +33,7 @@
 	</scm>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
+		<pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -90,7 +91,28 @@
 					<warSourceDirectory>WebContent</warSourceDirectory>
 				</configuration>
 			</plugin>
+			<plugin>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-maven-plugin</artifactId>
+      <version>3.4.1</version>
+      <configuration>
+        <changeLogFile>src\main\resources\db\changes\mychangelog.xml</changeLogFile>
+          <driver>com.mysql.cj.jdbc.Driver</driver>
+          <url>jdbc:mysql://localhost:3306/players</url>
+          <username>root</username>
+          <password>12345</password>
+        </configuration>
+      <executions>
+        <execution>
+          <phase>process-resources</phase>
+          <goals>
+            <goal>update</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
 		</plugins>
+		</pluginManagement>
 	</build>
 	<dependencies>
 <dependency>
@@ -149,6 +171,11 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.7.Final</version>
 		</dependency>
+		<dependency>
+    <groupId>org.liquibase</groupId>
+     <artifactId>liquibase-core</artifactId>
+      <version>3.4.1</version>
+     </dependency>
 
 	</dependencies>
 

@@ -24,8 +24,9 @@ public class AddPlayerServlet extends HttpServlet {
 		String name = request.getParameter("player");
 		String team = request.getParameter("playerTeam");
 		String status = request.getParameter("playerStatus");
+		String sports = request.getParameter("playerSports");
 		try {
-			p.addPlayers(id, name, team, status); 
+			p.addPlayers(id, name, team, status, sports); 
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

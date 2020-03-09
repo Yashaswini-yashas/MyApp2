@@ -26,7 +26,7 @@ public class ReadServlet extends HttpServlet {
 			out.println("<table border=\"1\">");
 			out.println("<table border=\"1\">" + "<html> <tr>\r\n" + "    <th>Players id</th>\r\n"
 					+ "    <th>Players id</th>\r\n" + "    <th>Players Team</th>\r\n"
-					+ "    <th>Players Status</th>\r\n" + "  </tr><body></body></html>");
+					+ "    <th>Players Status</th>\r\n" + "    <th>Players Sports</th>\r\n" + "  </tr><body></body></html>");
 			while (rs.next()) {
 
 				out.println("<tr>");
@@ -34,6 +34,7 @@ public class ReadServlet extends HttpServlet {
 				out.println("<td>" + rs.getString(2) + "</td>");
 				out.println("<td>" + rs.getString(3) + "</td>");
 				out.println("<td>" + rs.getString(4) + "</td>");
+				out.println("<td>" + rs.getString(5) + "</td>");
 				out.println("</tr>");
 			}
 			out.println("</table>");

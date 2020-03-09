@@ -6,13 +6,15 @@ public class Players {
 	private String name;
 	private String team;
 	private String status;
+	private String sports;
 	
-	public Players(int id, String name, String team, String status) {
+	public Players(int id, String name, String team, String status,String sports) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.team = team;
 		this.status = status;
+		this.sports =sports;
 	}
 
 	public int getId() {
@@ -47,6 +49,15 @@ public class Players {
 		this.status = status;
 	}
 	
+	
+	public String getSports() {
+		return sports;
+	}
+
+	public void setSports(String sports) {
+		this.sports = sports;
+	}
+
 	public Players() {
 		
 	}
