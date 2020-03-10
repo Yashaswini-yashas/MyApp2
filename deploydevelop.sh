@@ -1,7 +1,7 @@
 #!/bin/bash
+mvn clean package
 #liquibase command
 $1
-
 # My tomcat webapps are found at this location
 webapps_dir=/c/Users/ashwapan/Downloads/apache-tomcat-9.0.29/webapps
 # Remove existing assets (if any)
