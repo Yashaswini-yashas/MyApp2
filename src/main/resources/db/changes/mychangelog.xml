@@ -7,10 +7,10 @@
 	<preConditions>
 		<dbms type="mysql" />
 	</preConditions>
-	<changeSet author="Ashwani" id="addColumn2">
+	<changeSet author="Ashwani" id="addColumn3">
 		<addColumn catalogName="players" schemaName="players"
 			tableName="players">
-			<column name="players" type="varchar(45)" />
+			<column name="sports" type="varchar(45)" />
 		</addColumn>
 	</changeSet>
 	<changeSet author="Ashwani" id="15">
