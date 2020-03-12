@@ -59,10 +59,5 @@
 			delete from Players where id=22;
 		</rollback>
 	</changeSet>
-	<changeSet id="23" author="Ashwani">
-		<createTable tableName="changeRollback1">
-			<column name="id" type="int" />
-		</createTable>
-	</changeSet>
-</databaseChangeLog>
+	</databaseChangeLog>
  
