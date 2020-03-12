@@ -59,5 +59,16 @@
 			delete from Players where id=22;
 		</rollback>
 	</changeSet>
+	<changeSet author="Ashwani" id="29">
+		<insert tableName="Players">
+			<column name="Id" type="INT" value="29">
+				<constraints nullable="false" />
+			</column>
+			<column name="Name" type="VARCHAR(15)" value="Jackson" />
+			<column name="Team" type="VARCHAR(15)" value="India" />
+			<column name="Status" type="VARCHAR(15)" value="Injured" />
+		</insert>
+		<rollback>delete from Players where id=29</rollback>
+	</changeSet>
 	</databaseChangeLog>
  
