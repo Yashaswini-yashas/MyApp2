@@ -1,57 +1,74 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
-xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-     <preConditions>
-     <dbms type="mysql"/>
-     </preConditions>
-      <changeSet author="Ashwani" id="15">
-        <insert tableName="Players">
-            <column name="Id" type="INT" value="13">
-                <constraints nullable="false"/>
-            </column>
-            <column name="Name" type="VARCHAR(15)" value="Wayne"/>
-            <column name="Team" type="VARCHAR(15)" value="India"/>
-            <column name="Status" type="VARCHAR(15)" value="Injured"/>
-         </insert>
-     </changeSet>
-     <changeSet author="Ashwani" id="17">
-        <insert tableName="Players">
-            <column name="Id" type="INT" value="19">
-                <constraints nullable="false"/>
-            </column>
-            <column name="Name" type="VARCHAR(15)" value="John"/>
-            <column name="Team" type="VARCHAR(15)" value="India"/>
-            <column name="Status" type="VARCHAR(15)" value="Injured"/>
-      </insert>
-            <rollback>delete from Players where id=19</rollback>
-  </changeSet>
-  <changeSet author="Ashwani" id="21">
-        <insert tableName="Players">
-            <column name="Id" type="INT" value="21">
-                <constraints nullable="false"/>
-            </column>
-            <column name="Name" type="VARCHAR(15)" value="Tom"/>
-            <column name="Team" type="VARCHAR(15)" value="India"/>
-            <column name="Status" type="VARCHAR(15)" value="Injured"/>
-         </insert>
-         <insert tableName="Players">
-            <column name="Id" type="INT" value="22">
-                <constraints nullable="false"/>
-            </column>
-            <column name="Name" type="VARCHAR(15)" value="Jack"/>
-            <column name="Team" type="VARCHAR(15)" value="India"/>
-            <column name="Status" type="VARCHAR(15)" value="Injured"/>
-            </insert>
-         <rollback>delete from Players where id=21;
-                   delete from Players where id=22;
-         </rollback>
-         </changeSet>
-     <changeSet id="23" author="Ashwani">
-        <createTable tableName="changeRollback1">
-            <column name="id" type="int"/>
-        </createTable>
-        </changeSet>
-</databaseChangeLog>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+	<preConditions>
+		<dbms type="mysql" />
+	</preConditions>
+	<changeSet author="Ashwani" id="addColumn3">
+		<addColumn catalogName="players" schemaName="players"
+			tableName="players">
+			<column name="sports" type="varchar(45)" />
+		</addColumn>
+		<rollback>
+            <dropColumn tableName="players" columnName="sports"/>
+        </rollback>
+	</changeSet>
+	<changeSet author="Ashwani" id="15">
+		<insert tableName="Players">
+			<column name="Id" type="INT" value="13">
+				<constraints nullable="false" />
+			</column>
+			<column name="Name" type="VARCHAR(15)" value="Wayne" />
+			<column name="Team" type="VARCHAR(15)" value="India" />
+			<column name="Status" type="VARCHAR(15)" value="Injured" />
+		</insert>
+		<rollback>delete from Players where id=13</rollback>
+	</changeSet>
+	<changeSet author="Ashwani" id="17">
+		<insert tableName="Players">
+			<column name="Id" type="INT" value="19">
+				<constraints nullable="false" />
+			</column>
+			<column name="Name" type="VARCHAR(15)" value="John" />
+			<column name="Team" type="VARCHAR(15)" value="India" />
+			<column name="Status" type="VARCHAR(15)" value="Injured" />
+		</insert>
+		<rollback>delete from Players where id=19</rollback>
+	</changeSet>
+	<changeSet author="Ashwani" id="21">
+		<insert tableName="Players">
+			<column name="Id" type="INT" value="21">
+				<constraints nullable="false" />
+			</column>
+			<column name="Name" type="VARCHAR(15)" value="Tom" />
+			<column name="Team" type="VARCHAR(15)" value="India" />
+			<column name="Status" type="VARCHAR(15)" value="Injured" />
+		</insert>
+		<insert tableName="Players">
+			<column name="Id" type="INT" value="22">
+				<constraints nullable="false" />
+			</column>
+			<column name="Name" type="VARCHAR(15)" value="Jack" />
+			<column name="Team" type="VARCHAR(15)" value="India" />
+			<column name="Status" type="VARCHAR(15)" value="Injured" />
+		</insert>
+		<rollback>delete from Players where id=21;
+			delete from Players where id=22;
+		</rollback>
+	</changeSet>
+	<changeSet author="Ashwani" id="29">
+		<insert tableName="Players">
+			<column name="Id" type="INT" value="29">
+				<constraints nullable="false" />
+			</column>
+			<column name="Name" type="VARCHAR(15)" value="Jackson" />
+			<column name="Team" type="VARCHAR(15)" value="India" />
+			<column name="Status" type="VARCHAR(15)" value="Injured" />
+		</insert>
+		<rollback>delete from Players where id=29</rollback>
+	</changeSet>
+	</databaseChangeLog>
  
