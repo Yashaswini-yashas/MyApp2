@@ -12,9 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import DAO.PlayersDAOImpl;
 
+
+
 public class ReadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public static String capitalize(String str) {
+	    if(str == null || str.isEmpty()) {
+	        return str;
+	    }
 
+	    return str.substring(0, 1).toUpperCase() + str.substring(1);
+	}
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -31,7 +39,7 @@ public class ReadServlet extends HttpServlet {
 
 				out.println("<tr>");
 				out.println("<td>" + rs.getInt(1) + "</td>");
-				out.println("<td>" + rs.getString(2) + "</td>");
+				out.println("<td>" + capitalize(rs.getString(2)) + "</td>");
 				out.println("<td>" + rs.getString(3) + "</td>");
 				out.println("<td>" + rs.getString(4) + "</td>");
 				out.println("<td>" + rs.getString(5) + "</td>");

@@ -8,12 +8,19 @@ import java.sql.SQLException;
 import java.util.Scanner;
 public class PlayersDAOImpl  {
 
+	public static String capitalize(String str) {
+	    if(str == null || str.isEmpty()) {
+	        return str;
+	    }
+
+	    return str.substring(0, 1).toUpperCase() + str.substring(1);
+	} 
 	
 	public void addPlayers(int id, String name, String team, String status, String sports) throws ClassNotFoundException, SQLException {
 		Connection con = ConnectionClass.intializeConn();
 		PreparedStatement pt = con.prepareStatement("Insert into Players Values(?,?,?,?,?)");
 		pt.setInt(1,id);
-		pt.setString(2,name);
+		pt.setString(2,capitalize(name));
 		pt.setString(3,team);
 		pt.setString(4,status);
 		pt.setString(5,sports);
