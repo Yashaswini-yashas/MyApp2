@@ -33,7 +33,7 @@ public class ReadServlet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 
 			out.println("<!DOCTYPE html>\r\n" + "<html lang=\"en\">\r\n" + "<head>\r\n"
-					+ "  <title>Bootstrap Example</title>\r\n" + "  <meta charset=\"utf-8\">\r\n"
+					+ "  <title>Myapp</title>\r\n" + "  <meta charset=\"utf-8\">\r\n"
 					+ "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n"
 					+ "  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\">\r\n"
 					+ "  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\r\n"
