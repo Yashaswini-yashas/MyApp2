@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name></display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	
+		
+	</welcome-file-list>
+
+	<servlet>
+		<description></description>
+		<display-name>AddPlayerServlet</display-name>
+		<servlet-name>AddPlayerServlet</servlet-name>
+		<servlet-class>Controller.AddPlayerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddPlayerServlet</servlet-name>
+		<url-pattern>/AddPlayerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>DeleteServlet</display-name>
+		<servlet-name>DeleteServlet</servlet-name>
+		<servlet-class>Controller.DeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DeleteServlet</servlet-name>
+		<url-pattern>/DeleteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>UpdateServlet</display-name>
+		<servlet-name>UpdateServlet</servlet-name>
+		<servlet-class>Controller.UpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateServlet</servlet-name>
+		<url-pattern>/UpdateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ReadServlet</display-name>
+		<servlet-name>ReadServlet</servlet-name>
+		<servlet-class>Controller.ReadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReadServlet</servlet-name>
+		<url-pattern>/ReadServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

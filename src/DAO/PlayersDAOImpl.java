@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -16,6 +17,7 @@ import com.bettercloud.vault.VaultException;
 @SpringBootApplication
 public class PlayersDAOImpl {
 	
+
 	
 
 
@@ -33,11 +35,13 @@ public class PlayersDAOImpl {
 		ConnectionClass conn = new ConnectionClass();
 		Connection con = conn.intializeConn();
 		PreparedStatement pt = con.prepareStatement("Insert into Players Values(?,?,?,?,?)");
+
 		pt.setInt(1, id);
 		pt.setString(2, capitalize(name));
 		pt.setString(3, team);
 		pt.setString(4, status);
 		pt.setString(5, sports);
+
 		int i = pt.executeUpdate();
 		System.out.println(i + "wohooo");
 
