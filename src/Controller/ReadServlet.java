@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bettercloud.vault.VaultException;
+
 import DAO.PlayersDAOImpl;
 
 public class ReadServlet extends HttpServlet {
@@ -70,6 +72,12 @@ public class ReadServlet extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (VaultException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

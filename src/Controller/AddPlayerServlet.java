@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bettercloud.vault.VaultException;
 
 import DAO.PlayersDAOImpl;
 
@@ -27,7 +28,7 @@ public class AddPlayerServlet extends HttpServlet {
 		String sports = request.getParameter("playerSports");
 		try {
 			p.addPlayers(id, name, team, status, sports); 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException | SQLException | InterruptedException | VaultException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

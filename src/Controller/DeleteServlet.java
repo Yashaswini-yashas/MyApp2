@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bettercloud.vault.VaultException;
+
 import DAO.PlayersDAOImpl;
 
 public class DeleteServlet extends HttpServlet {
@@ -25,7 +27,7 @@ public class DeleteServlet extends HttpServlet {
 
 		try {
 			p.DeletePlayers(id);
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException | SQLException | InterruptedException | VaultException e) {
 
 			e.printStackTrace();
 		}
