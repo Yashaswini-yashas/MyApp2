@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bettercloud.vault.VaultException;
+
 import DAO.PlayersDAOImpl;
 
 public class UpdateServlet extends HttpServlet  {
@@ -24,7 +26,10 @@ public class UpdateServlet extends HttpServlet  {
 		
 		try {
 			 p.updateTeam(id, team);
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException | SQLException | InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (VaultException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -81,5 +81,6 @@
 		</insert>
 		<rollback>delete from Players where id=29</rollback>
 	</changeSet>
+
 	</databaseChangeLog>
  

@@ -1,7 +1,10 @@
 package dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Players {
-	
+
 	private int id;
 	private String name;
 	private String team;
