@@ -14,18 +14,16 @@ import com.bettercloud.vault.VaultException;
 
 import DAO.PlayersDAOImpl;
 
-
-
 public class ReadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-          public static String capitalize(String str) {
+
+	public static String capitalize(String str) {
 		if (str == null || str.isEmpty()) {
 			return str;
 		}
 
 		return str.substring(0, 1).toUpperCase() + str.substring(1);
 	}
-
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -35,7 +33,6 @@ public class ReadServlet extends HttpServlet {
 			ResultSet rs = PlayersDAOImpl.ReadPlayers();
 
 			PrintWriter out = response.getWriter();
-
 
 			out.println("<!DOCTYPE html>\r\n" + "<html lang=\"en\">\r\n" + "<head>\r\n"
 					+ "  <title>Myapp</title>\r\n" + "  <meta charset=\"utf-8\">\r\n"
@@ -56,7 +53,6 @@ public class ReadServlet extends HttpServlet {
 						+ capitalize(rs.getString(2)) + "</td>\r\n" + "        <td>" + rs.getString(3) + "</td>\r\n"
 						+ "        <td>" + rs.getString(4) + "</td>\r\n" + "        <td>" + rs.getString(5)
 						+ "</td>    \r\n" + "      </tr> ");
-
 			}
 
 			out.println("</tbody>\r\n" + "  </table>\r\n" + "</div>\r\n" + "\r\n" + "</body>\r\n" + "</html>\r\n" + "");
