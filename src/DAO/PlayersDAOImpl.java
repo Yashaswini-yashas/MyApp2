@@ -38,7 +38,7 @@ public class PlayersDAOImpl {
 
 		pt.setInt(1, id);
 		pt.setString(2, capitalize(name));
-		pt.setString(3, team);
+		pt.setString(3,  capitalize(team));
 		pt.setString(4, status);
 		pt.setString(5, sports);
 
