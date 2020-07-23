@@ -61,34 +61,14 @@ public class ConnectionClass  {
 	public ConnectionClass() {
 	}
 */
-	 public static void main(String args[]) throws VaultException {
-
-    }
-	public Connection intializeConn() throws ClassNotFoundException, SQLException, InterruptedException, VaultException {
-
-		File sslCertificate = new File("vault.crt");
-	     VaultConfig config =
-	                new VaultConfig()
-	                    .address("http://127.0.0.1:8200")
-	                    .token("s.qKpaKoOWxI9Y3uktFEoivMPA")
-	                    .build();
-	     Vault vault = new Vault(config);
-	    
-	     String username = vault.logical()
-	            .read("secret/database")
-	            .getData().get("b.username");
-	     String password = vault.logical()
-		            .read("secret/database")
-		            .getData().get("password");
-		System.out.println(username);
-        
-		String name = "players";
-
-		String dbURL = "jdbc:mysql://localhost:3306/players";
-		Class.forName("com.mysql.jdbc.Driver");
-        
-		Connection con = DriverManager.getConnection(dbURL, username, password);
-		return con;
+	public static Connection intializeConn() throws ClassNotFoundException, SQLException {
+			
+			String username = "root";
+			String password = "12345";
+			String dbURL = "jdbc:mysql://localhost:3306/players"; 
+		    Class.forName("com.mysql.jdbc.Driver");
+		    Connection con = DriverManager.getConnection(dbURL, username, password);
+			return con;
 	}
 
 }
