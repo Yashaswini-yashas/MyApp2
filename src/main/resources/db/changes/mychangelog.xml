@@ -17,6 +17,7 @@
 			<dropColumn tableName="players" columnName="sports" />
 		</rollback>
 	</changeSet>
+
 	<changeSet author="Ashwani" id="15">
 		<insert tableName="Players">
 			<column name="Id" type="INT" value="13">
@@ -80,4 +81,5 @@
 	</changeSet>
 
 </databaseChangeLog>
+
 
