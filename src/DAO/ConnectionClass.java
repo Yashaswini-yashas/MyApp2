@@ -61,7 +61,9 @@ public class ConnectionClass  {
 	public ConnectionClass() {
 	}
 */
-	public static Connection intializeConn() throws ClassNotFoundException, SQLException {
+
+	 public static Connection intializeConn() throws ClassNotFoundException, SQLException {
+
 			
 			String username = "root";
 			String password = "12345";
