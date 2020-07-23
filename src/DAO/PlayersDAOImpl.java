@@ -37,8 +37,9 @@ public class PlayersDAOImpl {
 		PreparedStatement pt = con.prepareStatement("Insert into Players Values(?,?,?,?,?)");
 
 		pt.setInt(1, id);
-		pt.setString(2, capitalize(name));
+		pt.setString(2, capitalize(name));<<<<<<< develop
 		pt.setString(3,  capitalize(team));
+
 		pt.setString(4, status);
 		pt.setString(5, sports);
 
