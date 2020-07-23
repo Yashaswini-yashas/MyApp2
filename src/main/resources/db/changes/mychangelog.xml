@@ -17,56 +17,7 @@
 			<dropColumn tableName="players" columnName="sports" />
 		</rollback>
 	</changeSet>
-<changeSet author="Ashwani" id="tag1">
-		<tagDatabase tag="v1.0" />
-	</changeSet>
-	<changeSet author="Ashwani" id="17">
-		<insert tableName="Players">
-			<column name="Id" type="INT" value="19">
-				<constraints nullable="false" />
-			</column>
-			<column name="Name" type="VARCHAR(15)" value="John" />
-			<column name="Team" type="VARCHAR(15)" value="India" />
-			<column name="Status" type="VARCHAR(15)" value="Injured" />
-		</insert>
-		<rollback>delete from Players where id=19</rollback>
-	</changeSet>
-	<changeSet author="Ashwani" id="21">
-		<insert tableName="Players">
-			<column name="Id" type="INT" value="21">
-				<constraints nullable="false" />
-			</column>
-			<column name="Name" type="VARCHAR(15)" value="Tom" />
-			<column name="Team" type="VARCHAR(15)" value="India" />
-			<column name="Status" type="VARCHAR(15)" value="Injured" />
-		</insert>
-		<insert tableName="Players">
-			<column name="Id" type="INT" value="22">
-				<constraints nullable="false" />
-			</column>
-			<column name="Name" type="VARCHAR(15)" value="Jack" />
-			<column name="Team" type="VARCHAR(15)" value="India" />
-			<column name="Status" type="VARCHAR(15)" value="Injured" />
-		</insert>
-		<rollback>delete from Players where id=21;
-			delete from Players where
-			id=22;
-		</rollback>
-	</changeSet>
-	<changeSet author="Ashwani" id="tag2">
-		<tagDatabase tag="v2.0" />
-	</changeSet>
-	<changeSet author="Ashwani" id="29">
-		<insert tableName="Players">
-			<column name="Id" type="INT" value="29">
-				<constraints nullable="false" />
-			</column>
-			<column name="Name" type="VARCHAR(15)" value="Jackson" />
-			<column name="Team" type="VARCHAR(15)" value="India" />
-			<column name="Status" type="VARCHAR(15)" value="Injured" />
-		</insert>
-		<rollback>delete from Players where id=29</rollback>
-	</changeSet>
+
 </databaseChangeLog>
 
 
