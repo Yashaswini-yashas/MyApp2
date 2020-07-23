@@ -50,7 +50,7 @@ public class ReadServlet extends HttpServlet {
 
 			while (rs.next()) {
 				out.println("<tr>\r\n" + "        <td>" + rs.getInt(1) + "</td>\r\n" + "        <td>"
-						+ capitalize(rs.getString(2)) + "</td>\r\n" + "        <td>" + rs.getString(3) + "</td>\r\n"
+						+ capitalize(rs.getString(2)) + "</td>\r\n" + "        <td>" + capitalize(rs.getString(3)) + "</td>\r\n"
 						+ "        <td>" + rs.getString(4) + "</td>\r\n" + "        <td>" + rs.getString(5)
 						+ "</td>    \r\n" + "      </tr> ");
 			}
