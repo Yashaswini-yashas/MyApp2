@@ -4,6 +4,9 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.io.File;
+import java.io.FileReader;
+import java.util.Properties;
 
 import javax.annotation.PostConstruct;
 
@@ -61,16 +64,21 @@ public class ConnectionClass  {
 	public ConnectionClass() {
 	}
 */
-
-	 public static Connection intializeConn() throws ClassNotFoundException, SQLException {
-
-			
-			String username = "root";
+public static Connection intializeConn() throws ClassNotFoundException, SQLException, IOException {
+		 FileReader reader=new FileReader("application.properties");  
+	      
+		    Properties p=new Properties();  
+		    p.load(reader);  
+		    String username= p.getProperty("username");  
+		  
 			String password = "12345";
 			String dbURL = "jdbc:mysql://localhost:3306/players"; 
 		    Class.forName("com.mysql.jdbc.Driver");
+		    System.out.println(username );
 		    Connection con = DriverManager.getConnection(dbURL, username, password);
 			return con;
+			
 	}
+
 
 }
