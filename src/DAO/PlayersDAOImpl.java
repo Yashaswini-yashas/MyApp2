@@ -1,5 +1,6 @@
 package DAO;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,7 +31,7 @@ public class PlayersDAOImpl {
 	}
 
 	public void addPlayers(int id, String name, String team, String status, String sports)
-			throws ClassNotFoundException, SQLException, InterruptedException, VaultException {
+			throws ClassNotFoundException, SQLException, InterruptedException, VaultException, IOException {
 		
 		ConnectionClass conn = new ConnectionClass();
 		Connection con = conn.intializeConn();
@@ -39,7 +40,6 @@ public class PlayersDAOImpl {
 		pt.setInt(1, id);
 		pt.setString(2, capitalize(name));
 		pt.setString(3, capitalize(team));
-
 		pt.setString(4, status);
 		pt.setString(5, sports);
 
@@ -48,7 +48,7 @@ public class PlayersDAOImpl {
 
 	}
 
-	public void updateTeam(int id, String team) throws ClassNotFoundException, SQLException, InterruptedException, VaultException {
+	public void updateTeam(int id, String team) throws ClassNotFoundException, SQLException, InterruptedException, VaultException, IOException {
 		ConnectionClass conn = new ConnectionClass();
 		Connection con = conn.intializeConn();
 
@@ -59,15 +59,17 @@ public class PlayersDAOImpl {
 		System.out.println(i);
 	}
  
-	public static ResultSet ReadPlayers() throws ClassNotFoundException, SQLException, InterruptedException, VaultException {
+	public static ResultSet ReadPlayers() throws ClassNotFoundException, SQLException, InterruptedException, VaultException, IOException {
 		ConnectionClass conn = new ConnectionClass();
+		
 		Connection con = conn.intializeConn();
+		
 		PreparedStatement stmt = con.prepareStatement("select * from Players");
 		ResultSet rs = stmt.executeQuery();
 		return rs;
 	}
 
-	public void DeletePlayers(int id) throws ClassNotFoundException, SQLException, InterruptedException, VaultException {
+	public void DeletePlayers(int id) throws ClassNotFoundException, SQLException, InterruptedException, VaultException, IOException {
 		
 		ConnectionClass conn = new ConnectionClass();
 		Connection con = conn.intializeConn();
@@ -78,7 +80,7 @@ public class PlayersDAOImpl {
 		System.out.println(i + " records deleted");
 	}
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException, VaultException {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException, VaultException, IOException {
 		
 		PlayersDAOImpl p = new PlayersDAOImpl();
 		System.out.println("Please enter the following integers to perform an operation\n" + "1 : to insert players\n"
