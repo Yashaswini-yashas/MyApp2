@@ -1,9 +1,13 @@
 package DAO;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 import javax.annotation.PostConstruct;
 
@@ -19,8 +23,7 @@ import com.bettercloud.vault.Vault;
 import com.bettercloud.vault.VaultConfig;
 import com.bettercloud.vault.VaultException;
 
-@SpringBootApplication
-@VaultPropertySource("secret/database")
+
 public class ConnectionClass  {
 	/*public static void main(String[] args) {
 		SpringApplication.run(MyApp.class,args);
@@ -61,16 +64,24 @@ public class ConnectionClass  {
 	public ConnectionClass() {
 	}
 */
-
-	 public static Connection intializeConn() throws ClassNotFoundException, SQLException {
-
+	 public static void main(String args[]) throws VaultException, SQLException, IOException, ClassNotFoundException {
+	
 			
-			String username = "root";
+    }
+	 public static Connection intializeConn() throws ClassNotFoundException, SQLException, IOException {
+		  Properties props = new Properties();
+		  props.load(ConnectionClass.class.getClassLoader().getResourceAsStream("application.properties"));
+		  String username = props.getProperty("username");
+		    
+		    
+//		    String username= "root";
 			String password = "12345";
 			String dbURL = "jdbc:mysql://localhost:3306/players"; 
 		    Class.forName("com.mysql.jdbc.Driver");
+		    System.out.println(username );
 		    Connection con = DriverManager.getConnection(dbURL, username, password);
 			return con;
+			
 	}
 
 }
