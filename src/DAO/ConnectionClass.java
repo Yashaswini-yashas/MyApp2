@@ -1,9 +1,13 @@
 package DAO;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 import javax.annotation.PostConstruct;
 
@@ -19,8 +23,7 @@ import com.bettercloud.vault.Vault;
 import com.bettercloud.vault.VaultConfig;
 import com.bettercloud.vault.VaultException;
 
-@SpringBootApplication
-@VaultPropertySource("secret/database")
+
 public class ConnectionClass  {
 	/*public static void main(String[] args) {
 		SpringApplication.run(MyApp.class,args);
@@ -61,34 +64,24 @@ public class ConnectionClass  {
 	public ConnectionClass() {
 	}
 */
-	 public static void main(String args[]) throws VaultException {
-
+	 public static void main(String args[]) throws VaultException, SQLException, IOException, ClassNotFoundException {
+	
+			
     }
-	public Connection intializeConn() throws ClassNotFoundException, SQLException, InterruptedException, VaultException {
-
-		File sslCertificate = new File("vault.crt");
-	     VaultConfig config =
-	                new VaultConfig()
-	                    .address("http://127.0.0.1:8200")
-	                    .token("s.qKpaKoOWxI9Y3uktFEoivMPA")
-	                    .build();
-	     Vault vault = new Vault(config);
-	    
-	     String username = vault.logical()
-	            .read("secret/database")
-	            .getData().get("b.username");
-	     String password = vault.logical()
-		            .read("secret/database")
-		            .getData().get("password");
-		System.out.println(username);
-        
-		String name = "players";
-
-		String dbURL = "jdbc:mysql://localhost:3306/players";
-		Class.forName("com.mysql.jdbc.Driver");
-        
-		Connection con = DriverManager.getConnection(dbURL, username, password);
-		return con;
+	 public static Connection intializeConn() throws ClassNotFoundException, SQLException, IOException {
+		  Properties props = new Properties();
+		  props.load(ConnectionClass.class.getClassLoader().getResourceAsStream("application.properties"));
+		  String username = props.getProperty("username");
+		  String url = props.getProperty("url");
+		    
+//		    String username= "root";
+			String password = "12345";
+			String dbURL = url; 
+		    Class.forName("com.mysql.jdbc.Driver");
+		    System.out.println(username );
+		    Connection con = DriverManager.getConnection(dbURL, username, password);
+			return con;
+			
 	}
 
 }

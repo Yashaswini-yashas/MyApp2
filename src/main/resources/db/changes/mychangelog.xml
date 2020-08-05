@@ -10,22 +10,15 @@
 	<changeSet author="Ashwani" id="addColumn3">
 		<addColumn catalogName="players" schemaName="players"
 			tableName="players">
+
 			<column name="sports" type="varchar(45)" />
 		</addColumn>
 		<rollback>
-            <dropColumn tableName="players" columnName="sports"/>
-        </rollback>
+			<dropColumn tableName="players" columnName="sports" />
+		</rollback>
 	</changeSet>
-	<changeSet author="Ashwani" id="15">
-		<insert tableName="Players">
-			<column name="Id" type="INT" value="13">
-				<constraints nullable="false" />
-			</column>
-			<column name="Name" type="VARCHAR(15)" value="Wayne" />
-			<column name="Team" type="VARCHAR(15)" value="India" />
-			<column name="Status" type="VARCHAR(15)" value="Injured" />
-		</insert>
-		<rollback>delete from Players where id=13</rollback>
+<changeSet author="Ashwani" id="tag1">
+		<tagDatabase tag="v1.0" />
 	</changeSet>
 	<changeSet author="Ashwani" id="17">
 		<insert tableName="Players">
@@ -56,8 +49,12 @@
 			<column name="Status" type="VARCHAR(15)" value="Injured" />
 		</insert>
 		<rollback>delete from Players where id=21;
-			delete from Players where id=22;
+			delete from Players where
+			id=22;
 		</rollback>
+	</changeSet>
+	<changeSet author="Ashwani" id="tag2">
+		<tagDatabase tag="v2.0" />
 	</changeSet>
 	<changeSet author="Ashwani" id="29">
 		<insert tableName="Players">
@@ -70,17 +67,6 @@
 		</insert>
 		<rollback>delete from Players where id=29</rollback>
 	</changeSet>
-	<changeSet author="Ashwani" id="44">
-		<insert tableName="Players">
-			<column name="Id" type="INT" value="44">
-				<constraints nullable="false" />
-			</column>
-			<column name="Name" type="VARCHAR(15)" value="Rahul" />
-			<column name="Team" type="VARCHAR(15)" value="India" />
-			<column name="Status" type="VARCHAR(15)" value="Injured" />
-		</insert>
-		<rollback>delete from Players where id=29</rollback>
-	</changeSet>
+</databaseChangeLog>
 
-	</databaseChangeLog>
- 
+
