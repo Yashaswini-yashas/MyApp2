@@ -69,12 +69,13 @@ public class ConnectionClass  {
 			
     }
 	 public static Connection intializeConn() throws ClassNotFoundException, SQLException, IOException {
+	 {
 		  Properties props = new Properties();
 		  props.load(ConnectionClass.class.getClassLoader().getResourceAsStream("application.properties"));
-		  String username = props.getProperty("username");
+//		  String username = props.getProperty("username");
 		  String url = props.getProperty("url");
 		    
-//		    String username= "root";
+		  String username = System.getenv("username1");
 			String password = "12345";
 			String dbURL = url; 
 		    Class.forName("com.mysql.jdbc.Driver");
@@ -83,5 +84,6 @@ public class ConnectionClass  {
 			return con;
 			
 	}
+
 
 }
