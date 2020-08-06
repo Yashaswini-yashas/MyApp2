@@ -1,0 +1,21 @@
+package DAO;
+
+public class systemvar {
+
+	
+	public static void main(String args[]) {
+		
+		 String userWindows = System.getenv("VAULT_ADDR");
+		 String username = System.getenv("username");
+		 String color= System.getenv("color");
+		 
+		System.out.println();
+	       System.out.println("Username using environment variable in windows : "  + userWindows);
+	       System.out.println("Username using environment variable in windows : "  + color);
+	       System.out.println("Username using environment variable in windows : "  + username);
+	       System.out.println("Username using environment variable in windows");
+
+	
+	}
+	
+}
