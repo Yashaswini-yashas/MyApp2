@@ -25,63 +25,64 @@ import com.bettercloud.vault.VaultException;
 
 
 public class ConnectionClass  {
-	/*public static void main(String[] args) {
-		SpringApplication.run(MyApp.class,args);
-	}
-	@Value("${b.username}")
-	public String username;
-	@Value("${password}")
-	public String password;
+        /*public static void main(String[] args) {
+                SpringApplication.run(MyApp.class,args);
+        }
+        @Value("${b.username}")
+        public String username;
+        @Value("${password}")
+        public String password;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+        public void setUsername(String username) {
+                this.username = username;
+        }
 
-	public String getUsername() {
-		return username;
-	}
+        public String getUsername() {
+                return username;
+        }
 
-	public void setPassword(String password) {
-		this.password = password;
+        public void setPassword(String password) {
+                this.password = password;
 
-	}
+        }
 
-	public String getPassword() {
-		return password;
-	}
-	
-	@PostConstruct
-	public void run() {
-	    System.out.println("==========uu================");
-	    setPassword(password);
-	    setUsername(username);
-		System.out.println(username);
-		System.out.println(password);
-		System.out.println("===========uu================");
+        public String getPassword() {
+                return password;
+        }
 
-	}
+        @PostConstruct
+        public void run() {
+            System.out.println("==========uu================");
+            setPassword(password);
+            setUsername(username);
+                System.out.println(username);
+                System.out.println(password);
+                System.out.println("===========uu================");
 
-	public ConnectionClass() {
-	}
+        }
+
+        public ConnectionClass() {
+        }
 */
-	 public static void main(String args[]) throws VaultException, SQLException, IOException, ClassNotFoundException {
-	
-			
+         public static void main(String args[]) throws VaultException, SQLException, IOException, ClassNotFoundException {
+
+
     }
-	 public static Connection intializeConn() throws ClassNotFoundException, SQLException, IOException {
-		  Properties props = new Properties();
-		  props.load(ConnectionClass.class.getClassLoader().getResourceAsStream("application.properties"));
-		  String username = props.getProperty("username");
-		  String url = props.getProperty("url");
-		    
-//		    String username= "root";
-			String password = "12345";
-			String dbURL = url; 
-		    Class.forName("com.mysql.jdbc.Driver");
-		    System.out.println(username );
-		    Connection con = DriverManager.getConnection(dbURL, username, password);
-			return con;
-			
-	}
+         public static Connection intializeConn() throws ClassNotFoundException, SQLException, IOException {
+                  Properties props = new Properties();
+                  props.load(ConnectionClass.class.getClassLoader().getResourceAsStream("application.properties"));
+                //  String username = props.getProperty("username");
+                  String url = props.getProperty("url");
+                  String username = System.getenv("username");
+//                  String username= "root";
+                       //Sring password = "Mysql@123456";
+		       String password = System.getenv("password");
+                        String dbURL = url;
+                    Class.forName("com.mysql.jdbc.Driver");
+                    System.out.println(username );
+                    Connection con = DriverManager.getConnection(dbURL, username, password);
+                        return con;
+
+        }
 
 }
