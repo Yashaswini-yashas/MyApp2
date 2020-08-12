@@ -74,15 +74,15 @@ public class ConnectionClass  {
 		  Properties props = new Properties();
 		  props.load(ConnectionClass.class.getClassLoader().getResourceAsStream("application.properties"));
 //		  String username = props.getProperty("username");
-		  String url = props.getProperty("url");
+		  String url_var = props.getProperty("url");
 		    
-		  String username = System.getenv("username1");
-			String password = "12345";
-			String dbURL = url; 
-		    Class.forName("com.mysql.jdbc.Driver");
-		    System.out.println(username );
-		    Connection con = DriverManager.getConnection(dbURL, username, password);
-			return con;
+		  String username = root
+		  String password = "12345";
+		  String dbURL = System.getenv(url_var); 
+		  Class.forName("com.mysql.jdbc.Driver");
+		  System.out.println(dbURL);
+		  Connection con = DriverManager.getConnection(dbURL, username, password);
+	          return con;
 			
 	}
 
