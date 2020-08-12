@@ -76,7 +76,7 @@ public class ConnectionClass  {
 //		  String username = props.getProperty("username");
 		  String url_var = props.getProperty("url");
 		    
-		  String username = root
+		  String username = root;
 		  String password = "12345";
 		  String dbURL = System.getenv(url_var); 
 		  Class.forName("com.mysql.jdbc.Driver");
