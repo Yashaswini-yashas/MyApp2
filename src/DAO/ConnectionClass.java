@@ -70,7 +70,7 @@ public class ConnectionClass  {
     }
 
 	 public static Connection intializeConn() throws ClassNotFoundException, SQLException, IOException {
-	 {
+	
 		  Properties props = new Properties();
 		  props.load(ConnectionClass.class.getClassLoader().getResourceAsStream("application.properties"));
 //		  String username = props.getProperty("username");
