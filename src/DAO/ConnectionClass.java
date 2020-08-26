@@ -76,7 +76,7 @@ public class ConnectionClass  {
                   String username = System.getenv("ncxenv");
               //  String username= "root";
 	      //  String password = System.getenv("password");
-                  Sring password = "Mysql@123456";
+                  String password = "Mysql@123456";
 	     
                         String dbURL = url;
                   Class.forName("com.mysql.jdbc.Driver");
